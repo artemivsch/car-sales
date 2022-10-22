@@ -9,9 +9,15 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Table(name = "models")
-public class Model {
+public class CarModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+
+
+    private String name;
+
+
 
 }
