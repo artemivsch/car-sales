@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<body>
+  <a href="/index">Show Ads</a>
+  <a th:if="${session.currentUser == null}" href="/reg">Registration</a>
+  <a th:if="${session.currentUser == null}" href="/login">Login</a>
+  <a th:if="${session.currentUser == null}" href="/ad">Add ad</a>
+  <a th:if="${session.currentUser != null}" href="/user/logout">Logout</a>
+
+
+
+</body>
+</html>
