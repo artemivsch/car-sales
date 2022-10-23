@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,9 +15,14 @@ public class CarModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
-
     private String name;
+
+    @OneToMany (mappedBy = "carModel", fetch = FetchType.EAGER)
+    private List<Car> cars;
+
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn (name = "mark_id")
+    private Mark mark;
 
 
 

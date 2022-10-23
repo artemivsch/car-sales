@@ -24,16 +24,9 @@ public class UserController {
 
     @GetMapping("/reg")
     public String reg(Model model) {
-        model.addAttribute("userModel", new User());
+        model.addAttribute("userModel", new RegistrationUserModel());
         return "reg";
     }
-
-    @PostMapping("/test")
-    public String test() {
-
-        return "reg";
-    }
-
 
     @PostMapping("/reg")
     public String reg(@Valid @ModelAttribute("userModel") RegistrationUserModel user, BindingResult bindingResult) {
@@ -65,7 +58,7 @@ public class UserController {
                 return "redirect:/";
             } else {
                 model.addAttribute("message", "Wrong password!");
-                System.out.println("wrnog pwd");
+                System.out.println("wrog pwd");
             }
         } else {
             model.addAttribute("message", "User not found!");
