@@ -22,6 +22,7 @@ public class UserService {
         user.setPassword(userModel.getPassword());
         user.setRegistrationDate(LocalDate.now());
         user.setIsAdmin(false);
+        user.setTelephone(userModel.getTelephone());
         userRepository.save(user);
     }
 
