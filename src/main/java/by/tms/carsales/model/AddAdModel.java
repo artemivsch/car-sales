@@ -7,12 +7,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.*;
 
-
 @Data
 @NoArgsConstructor
 public class AddAdModel {
 
-    @Pattern(regexp = "^[a-zA-Z0-9_]{2,8}$", message = "Car number must be like 0000-XX")
+    @Pattern(regexp = "^[a-zA-Z0-9_]{2,17}$", message = "Car number must be like 0000-XX")
     private String carNumber;
 
     @Min(value = 1960) @Max(value = 2022)
@@ -32,7 +31,4 @@ public class AddAdModel {
     private User user;
     @NotNull
     public Long modelId;
-
-
-
 }
