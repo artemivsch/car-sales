@@ -54,15 +54,12 @@ public class UserController {
             User user = byUsername.get();
             if (user.getPassword().equals(userModel.getPassword())) {
                 session.setAttribute("currentUser", user);
-                System.out.println(user.getName() + " login succ");
                 return "redirect:/";
             } else {
                 model.addAttribute("message", "Wrong password!");
-                System.out.println("wrog pwd");
             }
         } else {
             model.addAttribute("message", "User not found!");
-            System.out.println("not found userModel");
         }
         return "login";
     }
