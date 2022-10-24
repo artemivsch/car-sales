@@ -56,15 +56,26 @@
 <!--</option>-->
 
 <div th:each="ad : ${ads}" class="row justify-content-center">
-    <div  class="card" style="width: 40rem;">
-        <img th:src="'data:image/jpeg;base64,'+${ad.getFile64()}">
-        <p th:text="'Call'  + ${ad.getId()}"></p>
+    <div class="card" style="width: 40rem;">
+
+
         <div class="card-body">
 
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <p  class="btn btn-success" th:text="'Call ' + ${ad.getUser().getTelephone()}"></p>
+            <h4 class="card-title"
+                th:text="${ad.getCar().getCarModel().getMark().getName()} + ' ' + ${ad.getCar().getCarModel().getName()}"></h4>
+            <p th:text="${ad.getDate()}"></p>
+            <img class="card-img-top" th:src="'data:image/jpeg;base64,'+${ad.getFile64()}">
+            <ul>
+                <li th:text="'Year of manufacture: ' + ${ad.getCar().getYearOfMade()}"></li>
+                <li th:text="'Run (km): ' + ${ad.getCar().getRunKm()}"></li>
+                <li th:text="'Volume Engine (cub cm): ' + ${ad.getCar().getVolumeOfEngine()}"></li>
+                <b><li th:text="'COAST: ' + ${ad.getCoast()}"></li></b>
+
+            </ul>
+            <p class="btn btn-success"
+               th:text="'Call ' + ${ad.getUser().getTelephone()}+ ' (' + ${ad.getUser().getName()} + ')'"></p>
+
+
         </div>
     </div>
 </div>
