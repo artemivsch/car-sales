@@ -41,6 +41,7 @@ public class AdService {
         newAd.setCar(newCar);
         newAd.setDate(LocalDate.now());
         newAd.setUser(adModel.getUser());
+        newAd.setCoast(adModel.getCoast());
 
         byte[] bArr = adModel.getFile().getBytes();
         newAd.setFile64(Base64.getEncoder().encodeToString(bArr));

@@ -26,6 +26,9 @@ public class AddAdModel {
 
     private MultipartFile file;
 
+    @Min(100) @Max(1000000)
+    private int coast;
+
     private User user;
     @NotNull
     public Long modelId;
