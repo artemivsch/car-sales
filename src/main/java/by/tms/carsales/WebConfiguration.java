@@ -11,8 +11,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        registry
-//                .addInterceptor(new SecurityInterceptor())
-//                .addPathPatterns("/add_ad", "/logout");
+        registry
+                .addInterceptor(new SecurityInterceptor())
+                .addPathPatterns("/add_ad", "/logout");
     }
 }
