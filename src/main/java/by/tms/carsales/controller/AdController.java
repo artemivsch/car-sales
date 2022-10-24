@@ -48,7 +48,7 @@ public class AdController {
             model.addAttribute("models", adService.findAllModels());
             return "/add_ad";
         }
-        User currentUser = (User) httpSession.getAttribute("user");
+        User currentUser = (User) httpSession.getAttribute("currentUser");
         newAd.setUser(currentUser);
         adService.save(newAd);
         return "redirect:/";

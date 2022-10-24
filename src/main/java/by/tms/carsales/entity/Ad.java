@@ -17,7 +17,8 @@ public class Ad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
+    private int coast;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Car car;
 
@@ -26,8 +27,6 @@ public class Ad {
     private User user;
 
     private LocalDate date;
-
-   // private byte[] fileByte;
 
     @Lob
     private String file64;

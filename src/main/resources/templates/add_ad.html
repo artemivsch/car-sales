@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Ad</title>
@@ -75,10 +75,16 @@
             <input t th:field="*{yearOfMade}" class="form-control">
             <p class="form-text" th:if="${#fields.hasErrors('yearOfMade')}" th:errors="*{yearOfMade}"></p>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Enter coast ($) </label>
+            <input t th:field="*{coast}" class="form-control">
+            <p class="form-text" th:if="${#fields.hasErrors('coast')}" th:errors="*{coast}"></p>
+        </div>
 
 
-            <input th:field="*{file}" style = "size: 50px;" name = "file" type = "file" value = "Выбрать изображение" />
-<!--            <input type = "submit" value = "Submit">-->
+
+            <input th:field="*{file}" style = "size: 50px;" name = "file" type = "file" value = "Select image" />
+
 
         <img src="/show" style="width: 200px"/>
 
