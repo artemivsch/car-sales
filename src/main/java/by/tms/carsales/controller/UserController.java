@@ -29,10 +29,17 @@ public class UserController {
     }
 
     @PostMapping("/reg")
-    public String reg(@Valid @ModelAttribute("userModel") RegistrationUserModel user, BindingResult bindingResult) {
+    public String reg(@Valid @ModelAttribute("userModel") RegistrationUserModel user, Model model, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "reg";
         }
+        Optional<User> byUsername = userService.findByUsername(user.getUsername());
+
+        if (byUsername.isPresent()) {
+            model.addAttribute("message", "Username is already in use ");
+            return "reg";
+        }
+
         userService.save(user);
         return "redirect:/";
     }

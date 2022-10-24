@@ -56,8 +56,9 @@
             <input th:field="*{password}" type="password" class="form-control" >
             <p class="form-text" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
         <p th:text="${message}"></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
 </div>
 </body>
